@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/app
     docker:
       - image: lunafi/meteor-aws-java8
+    environment:
+      - METEOR_VERSION: "1601"
+      - AWS_CLI_VERSION: "11416"
     steps:
       - checkout
       - setup_remote_docker
@@ -15,7 +18,11 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                docker login -u $DOCKER_USER -p $DOCKER_PASS
-               docker push lunafi/meteor-aws-java8
+
+               docker tag lunafi/meteor-aws-java8:latest lunafi/meteor-aws-java8:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
+
+               docker push lunafi/meteor-aws-java8:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
+               docker push lunafi/meteor-aws-java8:latest
             else
               echo "not pushing an image since we are on a branch"
             fi
