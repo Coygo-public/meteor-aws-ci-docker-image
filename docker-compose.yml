@@ -1,0 +1,6 @@
+version: '3'
+
+services:  
+  meteor:
+    build: '.'
+    image: lunafi/meteor-aws-java8:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
