@@ -6,12 +6,15 @@ ARG AWS_CLI_VERSION_DOWNLOAD=1.14.16
 ARG METEOR_VERSION_DOWNLOAD=1.6.0.1
 ARG DOCKER_COMPOSE_DOWNLOAD=1.18.0
 ARG DOCKER_VERSION=17.10.0-r0
+ARG NODE_VERSION=8.9.4-r0
 # Install the AWS CLI,Python,Pip,AWS,git,docker,meteor-dependencies (libstdc,g++,make).
 # note: g++ triples the size of the image :( total is around 200MB
 RUN \
 	mkdir -p /app && \
 	apk -Uuv add \
   bash git jq curl \
+  nodejs=${NODE_VERSION} \
+  nodejs-npm=${NODE_VERSION}
   python py-pip \
   docker=${DOCKER_VERSION} \
   libstdc++ g++ make && \
