@@ -14,7 +14,7 @@ RUN \
 	apk -Uuv add \
   bash git jq curl \
   nodejs=${NODE_VERSION} \
-  nodejs-npm=${NODE_VERSION}
+  nodejs-npm=${NODE_VERSION} \
   python py-pip \
   docker=${DOCKER_VERSION} \
   libstdc++ g++ make && \
