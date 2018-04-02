@@ -4,8 +4,8 @@ FROM frolvlad/alpine-oraclejdk8:slim
 # env to be used within this file. note there is also a .env
 ARG AWS_CLI_VERSION_DOWNLOAD=1.14.16
 ARG METEOR_VERSION_DOWNLOAD=1.6.0.1
-ARG DOCKER_COMPOSE_DOWNLOAD=1.18.0
-ARG DOCKER_VERSION=17.10.0-r0
+ARG DOCKER_COMPOSE_DOWNLOAD=1.20.1
+ARG DOCKER_VERSION=18.02.0-r0
 # Install the AWS CLI,Python,Pip,AWS,git,docker,meteor-dependencies (libstdc,g++,make).
 # Install gcc, since its a node-gyp dependency and in case you need to rebuild during npm installs
 # note: g++ triples the size of the image :( total is around 200MB
