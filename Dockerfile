@@ -12,7 +12,7 @@ ARG DOCKER_VERSION=17.10.0-r0
 RUN \
 	mkdir -p /app && \
 	apk -Uuv add \
-  bash git jq curl openssh \
+  bash git jq curl openssh libsecret \
   python py-pip \
   docker=${DOCKER_VERSION} \
   gcc g++ make && \
