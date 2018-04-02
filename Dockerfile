@@ -14,11 +14,11 @@ RUN \
 	apk -Uuv add --no-cache \
   bash git jq curl openssh libsecret \
   python py-pip \
-  docker=${DOCKER_VERSION} \
+  docker \
   gcc g++ make && \
 	pip install \
   awscli==${AWS_CLI_VERSION_DOWNLOAD} \
-  docker-compose==${DOCKER_COMPOSE_DOWNLOAD} && \
+  docker-compose && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
 
