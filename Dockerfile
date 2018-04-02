@@ -12,7 +12,7 @@ ARG DOCKER_VERSION=18.02.0-r0
 RUN \
 	mkdir -p /app && \
 	apk -Uuv add --no-cache \
-  bash git jq curl openssh libsecret \
+  bash git jq curl openssh libsecret-dev \
   python py-pip \
   docker \
   gcc g++ make && \
