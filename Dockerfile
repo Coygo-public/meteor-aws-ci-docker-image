@@ -11,7 +11,7 @@ ARG DOCKER_VERSION=18.02.0-r0
 # note: g++ triples the size of the image :( total is around 200MB
 RUN \
 	mkdir -p /app && \
-	apk -Uuv add \
+	apk -Uuv add --no-cache \
   bash git jq curl openssh libsecret \
   python py-pip \
   docker=${DOCKER_VERSION} \
