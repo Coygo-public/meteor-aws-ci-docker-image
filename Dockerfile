@@ -3,7 +3,7 @@ FROM frolvlad/alpine-oraclejdk8:slim
 
 # env to be used within this file. note there is also a .env
 ARG AWS_CLI_VERSION_DOWNLOAD=1.14.16
-ARG METEOR_VERSION_DOWNLOAD=1.6.0.1
+ARG METEOR_VERSION_DOWNLOAD=1.6.1.1
 ARG DOCKER_COMPOSE_DOWNLOAD=1.20.1
 ARG DOCKER_VERSION=18.02.0-r0
 # Install the AWS CLI,Python,Pip,AWS,git,docker,meteor-dependencies (libstdc,g++,make).
