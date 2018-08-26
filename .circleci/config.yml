@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: lunafi/meteor-aws-java8
     environment:
-      - METEOR_VERSION: "1611"
+      - METEOR_VERSION: "1705"
       - AWS_CLI_VERSION: "11416"
     steps:
       - checkout
