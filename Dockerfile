@@ -1,4 +1,4 @@
-FROM library/alpine:3.8
+FROM frolvlad/alpine-glibc
 
 
 # env to be used within this file. note there is also a .env
