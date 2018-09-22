@@ -1,6 +1,6 @@
 version: '3'
 
-services:  
+services:
   meteor:
     build: '.'
-    image: lunafi/meteor-aws-java8:latest
+    image: coygo/meteor-aws-ci:latest

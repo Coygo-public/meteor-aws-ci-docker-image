@@ -3,10 +3,10 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: lunafi/meteor-aws-java8
+      - image: coygo/meteor-aws-ci
     environment:
-      - METEOR_VERSION: "1611"
-      - AWS_CLI_VERSION: "11416"
+      - METEOR_VERSION: "1705"
+      - AWS_CLI_VERSION: "11619"
     steps:
       - checkout
       - setup_remote_docker
@@ -19,10 +19,10 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-               docker tag lunafi/meteor-aws-java8:latest lunafi/meteor-aws-java8:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
+               docker tag coygo/meteor-aws-ci:latest coygo/meteor-aws-ci:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
 
-               docker push lunafi/meteor-aws-java8:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
-               docker push lunafi/meteor-aws-java8:latest
+               docker push coygo/meteor-aws-ci:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
+               docker push coygo/meteor-aws-ci:latest
             else
               echo "not pushing an image since we are on a branch"
             fi
