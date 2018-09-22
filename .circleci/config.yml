@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: lunafi/meteor-aws-java8
+      - image: coygo/meteor-aws-ci
     environment:
       - METEOR_VERSION: "1705"
       - AWS_CLI_VERSION: "11619"
@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Push the docker image
           command: |
-            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
                docker login -u $DOCKER_USER -p $DOCKER_PASS
 
                docker tag coygo/meteor-aws-ci:latest coygo/meteor-aws-ci:meteor.$METEOR_VERSION.aws.$AWS_CLI_VERSION
